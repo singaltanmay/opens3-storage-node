@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Optional;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,8 @@ import org.springframework.web.multipart.MultipartFile;
 @Service
 public class ChunkedStorageService implements StorageService {
 
+  private static final Logger LOGGER = LogManager.getLogger(ChunkedStorageService.class);
+
   @Autowired
   NodeObjectMetadataService nodeObjectMetadataService;
 
@@ -21,9 +25,11 @@ public class ChunkedStorageService implements StorageService {
   private String drivePath;
 
   public String store(MultipartFile file) throws IOException {
+    LOGGER.info("ChunkedStorageService.store called");
     String filePath = getFilePath(file);
+    LOGGER.info("Generated Filepath: " + filePath);
     file.transferTo(new File(filePath));
-    return null;
+    return filePath;
   }
 
   private String getFilePath(MultipartFile file) {
@@ -32,8 +38,11 @@ public class ChunkedStorageService implements StorageService {
 
   public byte[] fetch(String etag) {
     Optional<NodeObjectMetadata> metadata = nodeObjectMetadataService.findByEtag(etag);
+    if (metadata.isEmpty()) {
+      return null;
+    }
     String filePath = metadata.get().getFilePath();
-    byte[] images = new byte[0];
+    byte[] images;
     try {
       images = Files.readAllBytes(new File(filePath).toPath());
     } catch (IOException e) {

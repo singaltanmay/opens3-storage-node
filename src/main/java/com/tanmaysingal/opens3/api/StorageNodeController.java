@@ -2,6 +2,8 @@ package com.tanmaysingal.opens3.api;
 
 import com.tanmaysingal.opens3.store.StorageService;
 import java.io.IOException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,13 +17,15 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 public class StorageNodeController {
 
+  private static final Logger LOGGER = LogManager.getLogger(StorageNodeController.class);
   @Autowired
   private StorageService storageService;
 
   @PostMapping("/object")
   public ResponseEntity<?> store(@RequestParam("file") MultipartFile file) throws IOException {
-    String uploadImage = storageService.store(file);
-    return ResponseEntity.status(HttpStatus.OK).body(uploadImage);
+    LOGGER.info("StorageNodeController::store called");
+    String uploadImageFilePath = storageService.store(file);
+    return ResponseEntity.status(HttpStatus.OK).body(uploadImageFilePath);
   }
 
   @GetMapping("/object/{fileName}")

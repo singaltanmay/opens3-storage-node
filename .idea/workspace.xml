@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a2e62f71-7e3a-42f5-b17b-fe40d708d90e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tanmaysingal/opens3/nodemetadata/NodeObjectMetadataRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tanmaysingal/opens3/nodemetadata/NodeObjectMetadataRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tanmaysingal/opens3/StorageNodeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tanmaysingal/opens3/StorageNodeApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tanmaysingal/opens3/api/StorageNodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tanmaysingal/opens3/api/StorageNodeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tanmaysingal/opens3/store/ChunkedStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tanmaysingal/opens3/store/ChunkedStorageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tanmaysingal/opens3/store/StorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tanmaysingal/opens3/store/StorageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,6 +70,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "spring.configuration.checksum": "44b96338d9b5f1e204f14a1e0e05a30d"
   }
@@ -110,12 +115,22 @@
       <updated>1687224197447</updated>
       <workItem from="1687224199036" duration="406000" />
       <workItem from="1687237768623" duration="2580000" />
-      <workItem from="1687918340956" duration="2202000" />
+      <workItem from="1687918340956" duration="5507000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.io.IOException" package="java.io" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/opens3_storage_node$StorageNodeApplication.ic" NAME="StorageNodeApplication Coverage Results" MODIFIED="1687923526033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

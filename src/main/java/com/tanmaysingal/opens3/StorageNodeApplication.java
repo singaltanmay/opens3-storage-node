@@ -7,6 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class StorageNodeApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(SpringBootApplication.class, args);
+    SpringApplication.run(StorageNodeApplication.class, args);
   }
 }
